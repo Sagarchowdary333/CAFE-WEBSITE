@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 	}
 	requestAnimationFrame(raf);
 });
+
 async function getMessage() {
 
     const response = await fetch("https://8qbt1z8nlj.execute-api.us-east-1.amazonaws.com/prod/message");
