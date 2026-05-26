@@ -191,3 +191,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
 	}
 	requestAnimationFrame(raf);
 });
+async function getMessage() {
+
+    const response = await fetch("YOUR_API_URL");
+
+    const data = await response.json();
+
+    document.getElementById("result").innerText = data.message;
+}
