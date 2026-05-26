@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 });
 async function getMessage() {
 
-    const response = await fetch("YOUR_API_URL");
+    const response = await fetch("https://8qbt1z8nlj.execute-api.us-east-1.amazonaws.com/prod/message");
 
     const data = await response.json();
 
