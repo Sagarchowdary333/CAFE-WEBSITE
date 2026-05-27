@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cafe-website
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: cafe-website
+
+  template:
+    metadata:
+      labels:
+        app: cafe-website
+
+    spec:
+      containers:
+      - name: cafe-website
+
+        image: 279391564753.dkr.ecr.us-east-1.amazonaws.com/cafe-website-kubernetes:latest
+
+        ports:
+        - containerPort: 80
