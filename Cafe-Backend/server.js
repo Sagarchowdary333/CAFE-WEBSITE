@@ -3,6 +3,7 @@ const cors = require("cors");
 
 require("./config/db");
 
+const menuRoutes = require("./routes/MenuRoutes");
 const customerRoutes = require("./routes/CustomerRoutes");
 const orderRoutes = require("./routes/OrderRoutes");
 
@@ -17,20 +18,7 @@ app.get("/", (req, res) => {
 });
 
 // Menu Route
-app.get("/menu", (req, res) => {
-  res.json([
-    {
-      id: 1,
-      name: "Cappuccino",
-      price: 120
-    },
-    {
-      id: 2,
-      name: "Latte",
-      price: 150
-    }
-  ]);
-});
+app.use("/menu", menuRoutes);
 
 // Customer Route
 app.use("/customers", customerRoutes);
