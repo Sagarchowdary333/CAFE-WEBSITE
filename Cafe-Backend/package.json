@@ -1,6 +1,7 @@
 {
   "name": "cafe-backend",
   "version": "1.0.0",
+  "description": "Cafe Backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
