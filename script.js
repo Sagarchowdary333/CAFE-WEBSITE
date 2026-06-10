@@ -192,30 +192,3 @@ document.addEventListener("DOMContentLoaded", ()=> {
 	requestAnimationFrame(raf);
 });
 
-async function getMessage() {
-    const response = await fetch(
-        "https://sa17n9q6c6.execute-api.us-east-1.amazonaws.com/prod/menu"
-    );
-
-    const data = await response.json();
-
-    const menuGrid = document.querySelector(".menu-grid");
-
-    menuGrid.innerHTML = "";
-
-    data.forEach(item => {
-        menuGrid.innerHTML += `
-            <div class="menu-item animate-on-scroll" data-category="coffee">
-                <div class="menu-item-content">
-                    <h3>${item.item}</h3>
-                    <p>Menu item from DynamoDB</p>
-                    <div class="menu-item-footer">
-                        <span class="price">$${item.price}</span>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-}
-
-getMessage();
